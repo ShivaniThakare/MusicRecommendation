@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/static/finalcss.css">
+<!-- <link href="{{ url_for('static', filename='/static/finalcss.css') }}" rel="stylesheet" type="text/css" > -->
+<!-- impoorting font for the player. -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body class="w3-content" style="max-width:1300px">
+<!-- First Grid: Logo & About -->
+<div class="w3-row">
+  <div class="w3-half w3-black w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1 style="margin-top: -8%;">Music Player</h1>
+        <!-- player start -->
+        <div class="container">
+
+            <audio id="audio" preload="none" tabindex="0">
+                          <!-- <source src="https://archive.org/download/calexico2006-12-02..flac16/calexico2006-12-02d1t02.mp3" data-track-number="1" /> -->
+                          <source src="{{final_song[0]}}"data-track-number="1" />
+                          <source src="{{final_song[1]}}" data-track-number="2" />
+                          <source src="{{final_song[2]}}" data-track-number="3" />
+                          <source src="{{final_song[3]}}" data-track-number="4" />
+                          <source src="{{final_song[4]}}" data-track-number="5" />    
+                          <source src="{{final_song[5]}}" data-track-number="6" />
+                          <source src="{{final_song[6]}}" data-track-number="7" />
+                          <source src="{{final_song[7]}}" data-track-number="8" />
+                          <source src="{{final_song[8]}}" data-track-number="9" />
+                          <source src="{{final_song[9]}}" data-track-number="10" />
+                          Your browser does not support HTML5 audio.
+                      </audio>
+          
+            <div class="player">
+          
+              <div class="large-toggle-btn">
+                <i class="large-play-btn"><span class="screen-reader-text">Large toggle button</span></i>
+              </div>
+              <!-- /.play-box -->
+          
+              <div class="info-box">
+                <div class="track-info-box">
+                  <div class="track-title-text"></div>
+                  <div class="audio-time">
+                    <span class="current-time">00:00</span> /
+                    <span class="duration">00:00</span>
+                  </div>
+                </div>
+                <!-- /.info-box -->
+          
+                <div class="progress-box">
+                  <div class="progress-cell">
+                    <div class="progress">
+                      <div class="progress-buffer"></div>
+                      <div class="progress-indicator"></div>
+                    </div>
+                  </div>
+                </div>
+          
+              </div>
+              <!-- /.progress-box -->
+          
+              <div class="controls-box">
+                <i class="previous-track-btn disabled"><span class="screen-reader-text">Previous track button</span></i>
+                <i class="next-track-btn"><span class="screen-reader-text">Next track button</span></i>
+              </div>
+              <!-- /.controls-box -->
+          
+            </div>
+            <!-- /.player -->
+            
+            
+            <div class="play-list">
+            <table style="margin-top: 85%; text-align: left;">
+            <tr>
+            <th>
+              <div class="play-list-row" data-track-row="1">
+                <div class="small-toggle-btn">
+                  <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+                </div>
+                <div class="track-number">
+                  1.
+                </div>
+                <div class="track-title">
+                  <a class="playlist-track" href="#" data-play-track="1">{{S[0]}}</a>
+                  <!-- <button class="like-button" style="float: right; margin-right: -80%;"></button> -->
+                </div>
+              </div>
+            </th>
+            <th>
+                <button class="like-button" like-button-track="1"></button>
+            </th>
+            </tr>
+            <tr>
+            <th>
+              <div class="play-list-row" data-track-row="2">
+                <div class="small-toggle-btn">
+                  <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+                </div>
+                <div class="track-number">
+                  2.
+                </div>
+                <div class="track-title">
+                  <a class="playlist-track" href="#" data-play-track="2">{{S[1]}}</a>
+                  <!-- <button class="like-button" style="float: right; margin-right: -16.5%;"></button> -->
+                </div>
+              </div>
+            </th>
+            <th>
+                <button class="like-button" like-button-track="2"></button>
+            </th>
+            </tr>
+            <tr>
+            <th>
+              <div class="play-list-row" data-track-row="3">
+                <div class="small-toggle-btn">
+                  <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+                </div>
+                <div class="track-number">
+                  3.
+                </div>
+                <div class="track-title">
+                  <a class="playlist-track" href="#" data-play-track="3">{{S[2]}}</a>
+                  <!-- <button class="like-button" style="float: right; margin-right: -81%;"></button> -->
+                </div>
+              </div>
+            </th>
+            <th>
+                <button class="like-button" like-button-track="3"></button>
+            </th>
+            </tr>
+            <tr>
+            <th>
+              <div class="play-list-row" data-track-row="4">
+                <div class="small-toggle-btn">
+                  <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+                </div>
+                <div class="track-number">
+                  4.
+                </div>
+                <div class="track-title">
+                  <a class="playlist-track" href="#" data-play-track="4">{{S[3]}}</a>
+                  <!-- <button class="like-button" style="float: right; margin-right: -54%;"></button> -->
+                </div>
+              </div>
+            </th>
+            <th>
+                <button class="like-button" like-button-track="4"></button>
+            </th>
+            </tr>
+            <tr>
+            <th>
+              <div class="play-list-row" data-track-row="5">
+                <div class="small-toggle-btn">
+                  <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+                </div>
+                <div class="track-number">
+                  5.
+                </div>
+                <div class="track-title">
+                  <a class="playlist-track" href="#" data-play-track="5">{{S[4]}}</a>
+                  <!-- <button class="like-button" style="float: right; margin-right: -55%;"></button> -->
+                </div>
+              </div>
+            </th>
+            <th>
+                <button class="like-button" like-button-track="5"></button>
+            </th>
+            </tr>
+            <tr>
+            <th>
+              <div class="play-list-row" data-track-row="6">
+                <div class="small-toggle-btn">
+                  <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+                </div>
+                <div class="track-number">
+                  6.
+                </div>
+                <div class="track-title">
+                  <a class="playlist-track" href="#" data-play-track="6">{{S[5]}}</a>
+                  <!-- <button class="like-button" style="float: right; margin-right: -66.5%;"></button> -->
+                </div>
+              </div>
+            </th>
+            <th>
+                <button class="like-button" like-button-track="6"></button>
+            </th>
+            </tr>
+            <tr>
+            <th>
+              <div class="play-list-row" data-track-row="7">
+                <div class="small-toggle-btn">
+                  <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+                </div>
+                <div class="track-number">
+                  7.
+                </div>
+                <div class="track-title">
+                  <a class="playlist-track" href="#" data-play-track="7">{{S[6]}}</a>
+                  <!-- <button class="like-button" style="float: right; margin-right: -38%;"></button> -->
+                </div>
+              </div>
+            </th>
+            <th>
+                <button class="like-button" like-button-track="7"></button>
+            </th>
+            </tr>
+            <tr>
+            <th>
+              <div class="play-list-row" data-track-row="8">
+                <div class="small-toggle-btn">
+                  <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+                </div>
+                <div class="track-number">
+                  8.
+                </div>
+                <div class="track-title">
+                  <a class="playlist-track" href="#" data-play-track="8">{{S[7]}}</a>
+                  <!-- <button class="like-button" style="float: right; margin-right: -135%;"></button> -->
+                </div>
+              </div>
+            </th>
+            <th>
+                <button class="like-button" like-button-track="8"></button>
+            </th>
+            </tr>
+            <tr>
+            <th>
+              <div class="play-list-row" data-track-row="9">
+                <div class="small-toggle-btn">
+                  <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+                </div>
+                <div class="track-number">
+                  9.
+                </div>
+                <div class="track-title">
+                  <a class="playlist-track" href="#" data-play-track="9">{{S[8]}}</a>
+                  <!-- <button class="like-button" style="float: right; margin-right: -91%;"></button> -->
+                </div>
+              </div>
+            </th>
+            <th>
+                <button class="like-button" like-button-track="9"></button>
+            </th>
+            </tr>
+            <tr>
+            <th>
+              <div class="play-list-row" data-track-row="10">
+                <div class="small-toggle-btn">
+                  <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+                </div>
+                <div class="track-number">
+                  10.
+                </div>
+                <div class="track-title">
+                  <a class="playlist-track" href="#" data-play-track="10">{{S[9]}}</a>
+                  <!-- <button class="like-button" style="float: right; margin-right: -24.5%;"></button> -->
+                </div>
+              </div>
+            </th>
+            <th>
+                <button class="like-button" like-button-track="10"></button>
+            </th>
+            </tr>
+        </table>
+            </div>
+          
+            <div>Music from the <a href="https://archive.org/details/etree" target="_blank">Live Music Archive</a></div>
+          </div>
+    
+        <!-- player end -->
+    </div>
+  </div>
+  <!-- 
+  <div class="w3-half w3-blue-grey w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-center">
+      <h1 style="margin-top: -8%;">Personalised</h1>
+        <table style="width: 100%; text-align:start; margin-top: 20%;">
+            <tr>
+            <th>
+                <h3>Artist:</h3>
+            </th>
+            <th>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="1" value="0" class="slider" id="myRange">
+            </th>
+            <th>
+                <p>Value: <span id="demo"></span></p>
+            </div>
+            </th>
+            </tr>
+            <tr>
+            <th>
+                <h3>Timberall:</h3>
+            </th>
+            <th>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="1" value="0" class="slider" id="myRange1">
+            </th>
+            <th>
+                <p>Value: <span id="demo1"></span></p>
+            </div>
+            </th>
+            </tr>
+            <tr>
+            <th>
+                <h3>Harmonic:</h3>
+            </th>
+            <th>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="1" value="0" class="slider" id="myRange2">
+            </th>
+            <th>
+                <p>Value: <span id="demo2"></span></p>
+            </div>
+            </th>
+            </tr>
+            <tr>
+            <th>
+                <h3>Album:</h3>
+            </th>
+            <th>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="1" value="0" class="slider" id="myRange3">
+            </th>
+            <th>
+                <p>Value: <span id="demo3"></span></p>
+            </div>
+            </th>
+            </tr>
+            <tr>
+            <th>
+                <h3>Tempo:</h3>
+            </th>
+            <th>
+            <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange4">
+            </th>
+            <th>
+                <p>Value: <span id="demo4"></span></p>
+            </div>
+            </th>
+            </tr>
+            <tr>
+            <th>
+                <h3>Genre:</h3>
+            </th>
+            <th>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="1" value="0" class="slider" id="myRange6">
+            </th>
+            <th>
+                <p>Value: <span id="demo6"></span></p>
+            </div>
+            </th>
+            </tr>
+        </table>
+    </div>
+  </div>
+  -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-black w3-padding-16">
+    <div class="navbar" id="myNavbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#Liked">Liked Songs</a>
+        <a href="/logout">Log Out</a>
+        <a href="#">{{username}}</a>
+        <a href="/newrecommendation">NewRecommendation</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+</footer>
+<!-- <script src="{{url_for('static', filename='/static/finaljs.js')}}"></script> -->
+<script src="/static/finaloldjs.js"></script>
+</body>
+</html>
